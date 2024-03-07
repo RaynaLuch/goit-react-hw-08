@@ -12,7 +12,7 @@ export const Contact = ({ contact }) => {
         <FaUserAlt /> {contact.name}
       </p>
       <p>
-        <FaPhone /> {contact.phone}
+        <FaPhone /> {contact.number}
       </p>
       <button onClick={() => onDelete(contact.id)}>Delete</button>
     </div>

@@ -10,7 +10,7 @@ const userSchema = Yup.object().shape({
     .min(3, "Too short")
     .max(50, "Too long")
     .required("This is a required field"),
-  phone: Yup.string()
+  number: Yup.string()
     .min(3, "Too short")
     .max(50, "Too long")
     .required("This is a required field"),
@@ -32,7 +32,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit}
       initialValues={{
         name: "",
-        phone: "",
+        number: "",
       }}
       validationSchema={userSchema}
     >
@@ -42,8 +42,8 @@ export const ContactForm = () => {
         <ErrorMessage className={css.error} name="name" component="span" />
 
         <label htmlFor={phoneFieldId}>Number</label>
-        <Field type="tel" name="phone" id={phoneFieldId} />
-        <ErrorMessage className={css.error} name="phone" component="span" />
+        <Field type="tel" name="number" id={phoneFieldId} />
+        <ErrorMessage className={css.error} name="number" component="span" />
 
         <button type="submit">Submit</button>
       </Form>

@@ -5,8 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { Layout } from "./Layout/Layout";
 import { PrivateRoute } from "./PrivateRoute";
-import { fetchContacts } from "../redux/operations";
-import { selectError, selectIsLoading } from "../redux/selectors";
+
 import { useDispatch } from "react-redux";
 import { useAuth } from "../hooks";
 import { Toaster } from "react-hot-toast";
