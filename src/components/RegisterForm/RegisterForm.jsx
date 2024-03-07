@@ -20,20 +20,25 @@ const userSchema = Yup.object().shape({
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
+  // const handleSubmit = (e) => {
+  //   // e.preventDefault();
+  //   const form = e.target;
 
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
+  //   dispatch(
+  //     register({
+  //       name: form.elements.name.value,
+  //       email: form.elements.email.value,
+  //       password: form.elements.password.value,
+  //     })
+  //   );
 
-    form.reset();
+  const handleSubmit = (values, actions) => {
+    dispatch(register({ ...values }));
+    actions.resetForm();
   };
+
+  //   form.reset();
+  // };
 
   const nameFieldId = useId();
   const emailFieldId = useId();
