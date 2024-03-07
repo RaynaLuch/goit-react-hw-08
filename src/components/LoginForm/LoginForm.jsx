@@ -13,16 +13,8 @@ const userSchema = Yup.object().shape({
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const form = e.currentTarget;
   const handleSubmit = (values, actions) => {
     dispatch(logIn({ ...values }))
-      //   logIn({
-      //     email: form.elements.email.value,
-      //     password: form.elements.password.value,
-      //   })
-      // )
       .unwrap()
       .then(() => {
         console.log("login success");
@@ -31,8 +23,6 @@ export const LoginForm = () => {
         console.log("login error");
       });
 
-    //   form.reset();
-    // };
     actions.resetForm();
   };
 
