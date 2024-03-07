@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { useAuth } from "../hooks";
 import { Toaster } from "react-hot-toast";
 import { refreshUser } from "../redux/auth/operations";
+import { store, persistor } from "../redux/store";
 
 const HomePage = lazy(() => import("../pages/Home/Home"));
 const RegisterPage = lazy(() => import("../pages/Register"));
@@ -19,6 +20,10 @@ const ContactsPage = lazy(() => import("../pages/Contacts"));
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
+
+  // useEffect(() => {
+  //   persistor.dispatch({ type: REHYDRATE });
+  // }, []);
 
   useEffect(() => {
     dispatch(refreshUser());
