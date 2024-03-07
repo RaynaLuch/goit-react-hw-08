@@ -21,10 +21,6 @@ export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
-  // useEffect(() => {
-  //   persistor.dispatch({ type: REHYDRATE });
-  // }, []);
-
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
@@ -58,7 +54,6 @@ export const App = () => {
             path="/contacts"
             element={
               <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-              // <ContactsPage />
             }
           />
         </Route>

@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import css from "./ContactForm.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/operations";
 
 const userSchema = Yup.object().shape({
@@ -17,7 +17,6 @@ const userSchema = Yup.object().shape({
 });
 
 export const ContactForm = () => {
-  //   id = nanoid();
   const nameFieldId = useId();
   const phoneFieldId = useId();
 
